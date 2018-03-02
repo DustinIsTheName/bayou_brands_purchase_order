@@ -22,5 +22,7 @@ module BayouBrandsPurchaseOrder
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    ShopifyAPI::Base.site = "https://#{ENV["API_KEY"]}:#{ENV["PASSWORD"]}@#{ENV["MYSHOPIFY_URL"]}/admin"
   end
 end
