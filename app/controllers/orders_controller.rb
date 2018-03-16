@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
 		order.note = params["purchase_order"]["special_instructions"]
 		order.tags = 'purchase_order'
 		order.send_receipt = true
+		order.financial_status = 'pending'
 		order.customer = {}
 		order.customer["email"] = params["purchase_order"]["email"]
 		order.customer["first_name"] = name.first
